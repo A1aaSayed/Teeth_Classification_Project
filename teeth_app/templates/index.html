@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../static/css/style.css">
+  <title>Teeth Classification</title>
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+</head>
+<body>
+  <div class="container">
+    <h1>🦷 Teeth Classification</h1>
+
+    <form method="post" enctype="multipart/form-data" action="">
+      <input type="file" name="image" id="" required>
+      <button type="submit">Predict</button>
+    </form>
+
+    {% if image_path %}
+      <div class="result">
+        <img src="{{ image_path }}" alt="uploaded image">
+        <h2>Prediction: {{ prediction }}</h2>
+        <p>Confidence: {{ confidence | round(2) }}</p>
+        
+      </div>
+    {% endif %}
+  </div>
+</body>
+</html>
