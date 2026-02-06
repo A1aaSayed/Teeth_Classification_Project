@@ -4,6 +4,9 @@ This project is an **Image Classification system for dental images** using Deep 
 It compares multiple preprocessing techniques and CNN models to achieve the best classification performance.
 
 ---
+## Demo
+results\demo\teeth_classification.gif
+---
 
 ## Project Overview
 
