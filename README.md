@@ -5,7 +5,7 @@ It compares multiple preprocessing techniques and CNN models to achieve the best
 
 ---
 ## Demo
-![Demo](results\demo\teeth_classification.gif)
+![Teeth Classification Demo](results\demo\teeth_classification.gif)
 ---
 
 ## Project Overview
