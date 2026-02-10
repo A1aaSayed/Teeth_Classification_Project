@@ -1,66 +1,52 @@
-# 🦷 Teeth Image Classification System
-
-This project is an **Image Classification system for dental images** using Deep Learning.
-It compares multiple preprocessing techniques and CNN models to achieve the best classification performance.
+# 🦷 Dental Disease Diagnostic System (DentalAI)
 
 ---
 ## Demo
-![Teeth Classification Demo](results/demo/teeth_classification.gif)
+<!-- ![Teeth Classification Demo](results/demo/teeth_classification.gif) -->
 ---
 
 ## Project Overview
 
-The system classifies teeth images into **7 different classes** using:
-- A baseline CNN model
-- Data Augmentation
-- CLAHE (Contrast Limited Adaptive Histogram Equalization)
-
-The final selected model is deployed using **Flask** with a simple frontend interface.\
+This project is an end-to-end medical image classification system, designed to assist dentists in **identifying 7 different oral conditions** with high precision. This project was developed as part of my internship at **Cellula**.
 
 ---
 
-## Models Used
+## 🛠️ Project Evolution
+🔹 **Week 1: Foundation & Custom Modeling**
+- **Custom CNN Architecture:** Developed a baseline model from scratch.
 
-- Custom CNN Architecture
-- Batch Normalization
-- Dropout for regularization
-- Early Stopping & Learning Rate Reduction
+- **Data Augmentation:** Applied spatial transformations to handle dataset variance.
 
-### Preprocessing Techniques:
-- Normalization
-- Data Augmentation
-- CLAHE (Contrast enhancement)
+- **CLAHE Preprocessing:** Implemented Contrast Limited Adaptive Histogram Equalization to enhance dental features.
 
----
+- **Baseline Deployment:** Initially tested using a Flask web interface.
 
-## Model Performance (Test Set)
+🔹 **Week 2: Advanced Optimization & Professional Deployment**
+- **Transfer Learning:** Implemented EfficientNet-B0 (Pre-trained on ImageNet) for superior feature extraction.
 
-| Model | Test Accuracy |
-|------|---------------|
-| Baseline | ~96.8% |
-| Augmented | ~98.9%** |
-| CLAHE | ~96.2% |
+- **Streamlit Dashboard:** Built a professional-grade medical dashboard for real-time diagnostics.
 
-The **Baseline model** was selected for deployment.
+## 📊 Performance Comparison
 
----
 
-## Technologies Used
-
-- Python
-- TensorFlow / Keras
-- OpenCV
-- Flask
-- HTML, CSS
+| Stage |        Model       |  Preprocessing  | Test Accuracy |
+|-------|--------------------|-----------------|---------------|
+| Week1 |    Baseline CNN    |   Normalization |    ~96.8%     |
+| Week1 |    Augmented CNN   |   Augmentation  |    ~98.9%     |
+| Week1 |    CLAHE Model     |   CLAHE + Aug   |    ~96.2%     |
+| Week2 |   EfficientNet-B0  |     Transfer    |    ~99.2%     |
 
 ---
 
-## Features
+##  🔬 Technologies Used
 
-- Upload dental image
-- Predict tooth class
-- Display prediction confidence
-- Clean and simple UI
+- **Core:** Python, TensorFlow, Keras.
+
+- **Image Processing:** OpenCV (CLAHE), PIL.
+
+- **Deployment:** `Streamlit` (Current), Flask (Legacy).
+
+- **Visualization:** Plotly Express, Seaborn (Confusion Matrix).
 
 ---
 
@@ -68,12 +54,13 @@ The **Baseline model** was selected for deployment.
 
 ### 1️⃣ Install Requirements
 ```bash
+cd teeth_app_streamlit
 pip install -r requirements.txt
 ```
 
-### 2️⃣ Run Flask App
+### 2️⃣ Run Streamlit App
 ```bash
-python app.py
+streamlit run app.py
 ```
 
 ### 3️⃣ Open in Browser
@@ -93,12 +80,10 @@ http://127.0.0.1:5000
 
     - Testing
 
-## 📌 Notes
+## 📌 Key Takeaways
+1. **CLAHE** was crucial for highlighting subtle dental symptoms that the model would otherwise miss.
 
-CLAHE improves contrast but may cause over-enhancement if not tuned properly.
+2. **EfficientNet** provided the most stable performance and faster convergence compared to the custom architecture.
 
-Data Augmentation improved generalization significantly.
-
-## Author
-
-Developed by Alaa Sayed
+## 👩‍💻 Author
+**Alaa Sayed** - AI Engineer
