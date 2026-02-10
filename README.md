@@ -55,6 +55,8 @@ This project is an end-to-end medical image classification system, designed to a
 ### 1️⃣ Install Requirements
 ```bash
 cd teeth_app_streamlit
+```
+```bash
 pip install -r requirements.txt
 ```
 
