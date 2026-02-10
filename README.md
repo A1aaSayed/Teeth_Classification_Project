@@ -2,7 +2,7 @@
 
 ---
 ## Demo
-<!-- ![Teeth Classification Demo](results/demo/teeth_classification.gif) -->
+![Teeth Classification Demo](results/demo/teeth_demo.gif)
 ---
 
 ## Project Overview
