@@ -2,7 +2,7 @@
 
 ---
 ## Demo
-![Teeth Classification Demo](results/demo/teeth_demo.gif)
+![Dental AI Demo](results/demo/streamlit_demo.gif)
 ---
 
 ## Project Overview
@@ -67,8 +67,44 @@ streamlit run app.py
 
 ### 3️⃣ Open in Browser
 ```bash
-http://127.0.0.1:5000
+http://localhost:8501
 ```
+
+## 🐳 Docker Deployment (Containerized Version)
+You can run the application inside a Docker container for a fully isolated and production-ready environment.
+
+### 1️⃣ Build Docker Image
+```bash
+cd teeth_app_streamlit
+```
+
+```bash
+docker build -t dental-ai-app .
+```
+
+### 2️⃣ Run Docker Container
+```bash
+docker run -p 8501:8501 dental-ai-app
+```
+
+### 3️⃣ Open in Browser
+```bash
+http://localhost:8501
+```
+
+## 📈 Inference Pipeline
+
+1. Image Upload
+
+2. Resize → 256x256
+
+3. EfficientNet preprocess_input
+
+4. Model Prediction
+
+5. Softmax Probability Extraction
+
+6. Diagnostic Report Visualization
 
 ## Dataset
 
