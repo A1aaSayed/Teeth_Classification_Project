@@ -1,8 +1,6 @@
 import streamlit as st
 import tensorflow as tf
 from PIL import Image
-import numpy as np
-import pandas as pd
 import plotly.express as px
 from utils import predict_image
 
@@ -42,7 +40,7 @@ st.markdown('''
 @st.cache_resource
 def load_model():
   return tf.keras.models.load_model(
-    '../results/models/EfficientNet_best_model.keras',
+    'model/EfficientNet_best_model.keras',
     compile=False
     )
 
@@ -65,7 +63,6 @@ st.title('🦷 Dental Disease Diagnostic System')
 st.markdown("---")
 
 col1, col2 = st.columns([1, 1.2]) # Split screen into 2 columns
-# st.write('Upload a dental image and get the predicted tooth class')
 
 with col1:
   st.subheader('📸 Image Upload')
@@ -89,7 +86,7 @@ with col2:
             <div class="prediction-card">
                 <h3>Primary Diagnosis</h3>
                 <h1 style='color: #007bff;'>{pred_class}</h1>
-                <p>Confidence: {max(probs)*100:.2f}%</p>
+                <p>Confidence: {max(probs):.2f}%</p>
             </div>
         """, unsafe_allow_html=True)
     
@@ -109,21 +106,4 @@ with col2:
 
   else:
         st.warning("Please upload a dental image to begin analysis.")
-        st.image("https://img.freepik.com/free-vector/dentist-examining-patient-teeth-with-tools_1308-91956.jpg?t=st=1716380000")
-
-  # if st.button('Predict'):
-  #   with st.spinner('Predicting...'):
-  #     pred_class, probs = predict_image(model, image, class_names)
-
-  #   st.success(f'✅ Predicted Class: **{pred_class}**')
-
-  #   df_probs = pd.DataFrame({'Class': class_names, 'Probability': probs})
-
-  #   # Probability Chart
-  #   st.subheader('Prediction Probabilities')
-  #   # chart_data = {
-  #   #   'Class': class_names,
-  #   #   'Probability (%)': probs
-  #   # }
-
-  #   st.bar_chart(df_probs.set_index('Class'))
+        st.image("Dental.jpg")
